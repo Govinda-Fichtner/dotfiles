@@ -4,8 +4,8 @@ PREZTO_REPO_URL="https://github.com/sorin-ionescu/prezto.git"
 if git ls-remote "$PREZTO_REPO_URL" &>/dev/null; then
   echo "Fetching Prezto:"
   if [ ! -d "$HOME/.zprezto" ]; then
-    echo "Cloning to ~/.prezto:"
-    git clone --recursive "$PREZTO_REPO_URL" ~/.prezto
+    echo "Cloning to ~/.zprezto:"
+    git clone --recursive "$PREZTO_REPO_URL" ~/.zprezto
 
     setopt EXTENDED_GLOB
     for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
@@ -13,7 +13,7 @@ if git ls-remote "$PREZTO_REPO_URL" &>/dev/null; then
     done
   else
     (
-      cd ~/.prezto
+      cd ~/.zprezto
       git pull
     )
   fi
